@@ -7,7 +7,12 @@ app.config["DEBUG"] = True
 # A route to return all of the available entries in our catalog.
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
+def index():
+    return "<h1>Hello World</h1>"
+
+
+@app.route('/api', methods=['POST'])
 def api_all():
     body = request.json
     print(body)
