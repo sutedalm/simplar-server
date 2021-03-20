@@ -22,6 +22,7 @@ def api_all():
     print(body['data'])
     input = body['data']
     ai = body["ai"]
+    result = []
     if ai == "gpt3":
         result = gpt3(result)
     else:
@@ -58,6 +59,8 @@ def evaluate(input):
 
 
 def gpt3(input):
+    intro = "My second grader asked me what this passage means:\n\"\"\"\n"
+    outro = "\n\"\"\"\nI rephrased it for him, in plain language a second grader can understand:\n\"\"\"\n"
     openai.api_key = os.environ["GPT3_KEY"]
     response = openai.Completion.create(
     engine="davinci",
