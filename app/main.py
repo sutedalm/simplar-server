@@ -9,7 +9,7 @@ from access.text import word_tokenize
 from access.utils.helpers import yield_lines, write_lines, get_temp_filepath, mute
 import os
 import openai
-        
+
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
@@ -24,10 +24,10 @@ def api_all():
     ai = body["ai"]
     result = []
     if ai == "gpt3":
-        result = gpt3(result)
+        result = [gpt3(line) for line in input]
     else:
         result = evaluate(input)
-    
+
     return jsonify(result)
 
 
@@ -64,7 +64,7 @@ def gpt3(input):
     openai.api_key = os.environ["GPT3_KEY"]
     response = openai.Completion.create(
     engine="davinci",
-    prompt="My second grader asked me what this passage means:\n\"\"\"\n" + input + "\n\"\"\"\nI rephrased it for him, in plain language a second grader can understand:\n\"\"\"\n",
+    prompt=intro + input + outro,
     temperature=0,
     max_tokens=60,
     top_p=1.0,
