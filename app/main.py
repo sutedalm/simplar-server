@@ -21,7 +21,7 @@ app.config["DEBUG"] = True
 def api_all():
     body = request.json
     input = body['data']
-
+    print(input)
     use_gpt3 = body["useGPT3"]
     enable_summarizer = body["enableSummarizer"]
 
