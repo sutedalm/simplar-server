@@ -1,6 +1,7 @@
 import flask
 
 from flask import request, jsonify
+from summarizer import Summarizer
 
 from access.preprocessors import get_preprocessors
 from access.resources.prepare import prepare_models
@@ -19,11 +20,17 @@ app.config["DEBUG"] = True
 @app.route('/', methods=['POST'])
 def api_all():
     body = request.json
-    print(body['data'])
     input = body['data']
-    ai = body["ai"]
+
+    use_gpt3 = body["useGPT3"]
+    enable_summarizer = body["enableSummarizer"]
+
+    if enable_summarizer:
+        model = Summarizer()
+        input = [model(line) for line in input]
+
     result = []
-    if ai == True:
+    if use_gpt3:
         result = [gpt3(line) for line in input]
     else:
         result = evaluate(input)
