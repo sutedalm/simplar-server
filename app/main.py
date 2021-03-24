@@ -73,7 +73,7 @@ def gpt3(input):
     stop=["\"\"\""]
     )
 
-    return response
+    return response["choices"][0]["text"]
 
 
 if __name__ == "__main__":
