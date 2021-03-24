@@ -23,7 +23,7 @@ def api_all():
     input = body['data']
     ai = body["ai"]
     result = []
-    if ai == "gpt3":
+    if ai == True:
         result = [gpt3(line) for line in input]
     else:
         result = evaluate(input)
