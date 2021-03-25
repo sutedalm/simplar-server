@@ -7,7 +7,7 @@ from app.modules.gpt3 import evaluate_batch as evaluate_gpt3
 # from app.modules.bertSummarizer import evaluate_batch as evaluate_summarizer
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+# app.config["DEBUG"] = True
 
 @app.route('/', methods=['POST'])
 def api_all():
