@@ -25,7 +25,15 @@ def api_all():
     else:
         result = evaluate_simplification(input)
 
-    return jsonify(result)
+
+    response = {
+        "data": [{
+            "text": line,
+            "imageUrl": "",
+        } for line in result]
+    }
+
+    return jsonify(response)
 
 
 
