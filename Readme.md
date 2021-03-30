@@ -1,1 +1,3 @@
-Please install chromedriver from https://sites.google.com/a/chromium.org/chromedriver/downloads and add it to the app folder.
+## Simplar project
+This is the backend for the Simplar project.
+The backend is already running on a server hosted in Google Cloud.
