@@ -22,7 +22,7 @@ export LANG="en_US.UTF-8"
 
 ### Download project:
 ```
-https://github.com/sutedalm/simplar-server.git  
+git clone https://github.com/sutedalm/simplar-server.git  
 cd simplar-server
 ```
 
@@ -68,11 +68,14 @@ The JSON request should look like this:
     "enableSummarizer": false
 }
 ```
-With the "useGPT3" boolean you can use GPT3. However, you need to have an acces key.
-Save the access key as an environement variable with (Linux):
+"data": List of strings(sentences), each of them is simplified separately.
+"useGPT3": Boolean, enables GPT3 if true. However, you need to have an acces key.
+Save the access key as an environement variable with:
 ```
 export GPT3_KEY:"your_key"
 ```
+"enableSummarizer": enables summarizer. Summarized Text is then simplified.
+
 ### Credits:
 https://github.com/facebookresearch/access.git
 
