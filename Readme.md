@@ -68,13 +68,13 @@ The JSON request should look like this:
     "enableSummarizer": false
 }
 ```
-"data": List of strings(sentences), each of them is simplified separately.
-"useGPT3": Boolean, enables GPT3 if true. However, you need to have an acces key.
+- "data": List of strings(sentences), each of them is simplified separately.
+- "useGPT3": Boolean, enables GPT3 if true. However, you need to have an acces key.
 Save the access key as an environement variable with:
 ```
 export GPT3_KEY:"your_key"
 ```
-"enableSummarizer": enables summarizer. Summarized Text is then simplified.
+- "enableSummarizer": enables summarizer. Summarized Text is then simplified.
 
 ### Credits:
 https://github.com/facebookresearch/access.git
